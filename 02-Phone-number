@@ -1,0 +1,7 @@
+#!/bin/bash
+
+each "Please enter your Mobile Number"
+read -s Mobile-Number
+
+each "Mobile Number entered is: $Mobile-Number
+
