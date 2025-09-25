@@ -1,8 +1,8 @@
 #!/bin/bash
 
-PERSON1="Raghu"
-PERSON2="Ramaiah"
-PERSON3="Satish"
+PERSON1="Pawan Kalyan"
+PERSON2="Chiranjeevi"
+PERSON3="Nagababu"
 
 echo "$PERSON1:: How are you $PERSON2"
 echo "$PERSON2:: I am fine, $PERSON1 what are you doing now"
