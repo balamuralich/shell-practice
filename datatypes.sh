@@ -2,7 +2,7 @@
 
 NUMBER1=200
 NUMBER2=300
-NAME=Balamurali
+$NAME
 
 SUM=$(($NUMBER1+$NUMBER2))
 
