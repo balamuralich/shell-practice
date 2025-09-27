@@ -21,7 +21,7 @@ fi
 dnf install mysql -y
 VALIDATE $? "MySQL"
 
-dnf install mongodb -y
+dnf install mongodb-org -y
 VALIDATE $? "Mongodb"
 
 
