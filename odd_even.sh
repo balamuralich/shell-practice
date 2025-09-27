@@ -4,8 +4,8 @@ echo "Please enter your number: "
 
 read NUMBER
 
-if [$(($NUMBER %2)) -eq 0]; then
-   echo "Given number is EVEN"
+if [ $(($NUMBER % 2)) -eq 0 ]; then
+   echo "Given number $NUMBER is EVEN"
 else
-   echo "Given number is ODD"
+   echo "Given number $NUMBER is ODD"
 fi
