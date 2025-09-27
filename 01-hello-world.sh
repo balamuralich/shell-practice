@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PERSON1="$1"
+PERSON1="himakar"
 PERSON2="$2"
 PERSON3="$3"
 
