@@ -2,8 +2,9 @@
 
 NUMBER1=200
 NUMBER2=300
-NAME=Myname
+NAME=Balamurali
 
-SUM=(($NUMBER1+$NUMBER2))
+SUM=$(($NUMBER1+$NUMBER2))
 
 echo "The total is $SUM"
+echo "This number belongs to $NAME"
