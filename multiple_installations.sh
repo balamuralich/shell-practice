@@ -16,7 +16,7 @@ else
     echo "MySQL installation successfully completed"
 fi
 
-dnf install mangodb -y
+dnf install mongodb -y
 
 if [ $? -ne 0 ]; then
     echo "ERROR :: Installing Mangodb is failure"
@@ -34,4 +34,5 @@ else
     echo "nginx installation successfully completed"
 fi
 
+dnf install mongodb-mongosh -y
 
