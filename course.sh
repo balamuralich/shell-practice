@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "this tip is $newone
+echo "this tip is $newone"
 
 export newone
 
