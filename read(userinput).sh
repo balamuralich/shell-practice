@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo Enter your mobile number
+
 read -s mobile_number 
 
-echo $mobile_number
+echo My mobile number is $mobile_number
