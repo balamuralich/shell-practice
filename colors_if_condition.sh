@@ -26,8 +26,12 @@ fi
 
 }
 
+dnf list intalled mysql
+if $[ $? -ne 0]; then
 dnf install mysql -y
 VALIDATE $? "MySQL"
+else
+    echo -e " $G MySQL already installed $N "
 
 dnf install nginx -y
 VALIDATE $? "Nginx"
