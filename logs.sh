@@ -1,0 +1,57 @@
+#!/bin/bash
+
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+FOLDER_LOG="/var/log/shell-practice"
+mkdir -p $FOLDER_LOG
+SCRIPT_NAME=$( echo $0 | cut -d "." -f1)
+LOG_FILE="$FOLDER_LOG/$SCRIPT_NAME.log"
+
+USERID=$(id -u)
+
+if [ $USERID -ne 0 ]; then
+    echo -e " $R ERROR $N Please run with root previlege"
+    # if -e given echo command will take it as first letter as command, above $R is starting of color Green and $N is for end of color.
+    exit 1
+fi
+
+
+VALIDATE(){
+
+    if [ $1 -ne 0 ]; then
+    echo -e " $R ERROR $N Installing $2 is failure"
+    # if -e given echo command will take it as first letter as command, above $R is starting of color Green and $N is for end of color.
+    exit 1
+else
+    echo -e " $G $2 installation successfully completed $N "
+    # if -e given echo command will take it as first letter as command, above $G is starting of color Green and $N is for end of color.
+fi
+
+}
+
+dnf list installed mysql &>>$LOG_FILE
+if [ $? -ne 0 ]; then
+    dnf install mysql -y &>>$LOG_FILE
+    VALIDATE $? "MySQL"
+else
+    echo -e "MySQL already installed.... $Y SKIPPING $N"
+fi
+
+dnf list installed nginx &>>$LOG_FILE
+if [ $? -ne 0 ]; then
+    dnf install nginx -y &>>$LOG_FILE
+    VALIDATE $? "Nginx"
+else
+    echo -e "Nginx already installed.... $Y SKIPPING $N"
+fi
+
+dnf list installed mongodb-mongosh -y &>>$LOG_FILE
+if [ $? -ne 0 ]; then
+    dnf install mongodb-mongosh -y &>>$LOG_FILE
+    VALIDATE $? "mongodb-mongosh"
+else
+    echo -e "mongodb-mongosh already installed.... $Y SKIPPING $N"
+fi
