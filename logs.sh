@@ -9,6 +9,7 @@ FOLDER_LOG="/var/log/shell-practice"
 mkdir -p $FOLDER_LOG
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1)
 LOG_FILE="$FOLDER_LOG/$SCRIPT_NAME.log"
+export LOG_FILE
 
 USERID=$(id -u)
 
