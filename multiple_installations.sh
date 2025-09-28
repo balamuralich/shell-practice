@@ -1,5 +1,10 @@
 #!/bin/bash
 
+R="\e[31m"
+G="\e[32m"
+y="\e[33m"
+N="\e[0m"
+
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
@@ -10,7 +15,7 @@ fi
 VALIDATE(){
 
     if [ $1 -ne 0 ]; then
-    echo "ERROR :: Installing $2 is failure"
+    echo -e " $R ERROR $N Installing $2 is failure"
     exit 1
 else
     echo "$2 installation successfully completed"
