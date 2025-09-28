@@ -8,17 +8,17 @@ N="\e[0m"
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
-    echo -e " $R ERROR $N Please run with root previlege"
+    echo "ERROR Please run with root previlege"
     exit 1
 fi
 
 VALIDATE(){
 
     if [ $1 -ne 0 ]; then
-    echo -e " $R ERROR $N Installing $2 is failure"
+    echo "ERROR Installing $2 is failure"
     exit 1
 else
-    echo -e " $G $2 installation successfully completed $N "
+    echo "$2 installation successfully completed"
     fi
 
 }
