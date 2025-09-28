@@ -31,7 +31,7 @@ if [ $? -ne 0 ]; then
     dnf install mysql -y
     VALIDATE $? "MySQL"
 else
-    echo -e "MySQL already installed.... $G SKIPPING $N"
+    echo -e "MySQL already installed.... $Y SKIPPING $N"
 fi
 
 dnf list installed nginx
@@ -39,7 +39,7 @@ if [ $? -ne 0 ]; then
     dnf install nginx -y
     VALIDATE $? "Nginx"
 else
-    echo -e "Nginx already installed.... $G SKIPPING $N"
+    echo -e "Nginx already installed.... $Y SKIPPING $N"
 fi
 
 dnf list installed mongodb-mongosh -y
@@ -47,5 +47,5 @@ if [ $? -ne 0 ]; then
     dnf install mongodb-mongosh -y
     VALIDATE $? "mongodb-mongosh"
 else
-    echo -e "mongodb-mongosh already installed.... $G SKIPPING $N"
+    echo -e "mongodb-mongosh already installed.... $Y SKIPPING $N"
 fi
