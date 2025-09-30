@@ -33,3 +33,13 @@ if [ $? -ne 0 ]; then
 else
     echo -e "MySQL already installed..... ${Y}${B}SKIPPING${N1}${N}"
 fi
+
+# Check if Nginx is installed
+dnf list installed Nginx
+if [ $? -ne 0 ]; then
+    echo -e "${Y}${B}Installing Nginx...${N1}${N}"
+    dnf install Nginx -y
+    VALIDATE $?
+else
+    echo -e "Nginx already installed..... ${Y}${B}SKIPPING${N1}${N}"
+fi
