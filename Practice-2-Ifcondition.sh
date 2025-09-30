@@ -1,11 +1,13 @@
 #!/bin/bash
 
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 B="\e[1m" #Bold
-N1="\e[0m" #No Bold
+N1="\e[22m" #No Bold
+
 
 USERID=$(id -u)
 
