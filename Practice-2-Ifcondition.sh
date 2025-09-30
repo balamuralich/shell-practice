@@ -25,29 +25,11 @@ VALIDATE(){
     fi
 }
 
-dnf list installed mysql
-
-if [ $? -ne 0 ]; then
     dnf install mysql -y
     VALIDATE $? "mysql"
-else
-    echo -e "MySQL already installed..... $Y $B SKIPPING $N1 $N"
-fi
 
-dnf list installed nginx
-
-if [ $? -ne 0 ]; then
     dnf install nginx -y
     VALIDATE $? "nginx"
-else
-    echo -e "Nginx already installed..... $Y $B SKIPPING $N1 $N"
-fi
 
-dnf list installed mongodb-org
-
-if [ $? -ne 0 ]; then
     dnf install mongodb-org -y
     VALIDATE $? "mongodb"
-else
-    echo -e "Mongodb already installed..... $Y $B SKIPPING $N1 $N"
-fi
