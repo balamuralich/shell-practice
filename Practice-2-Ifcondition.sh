@@ -3,6 +3,6 @@
 P1=$1
 P2=$2
 
-if [ $1 -eq White ]; then
+if [ $1 -eq 0 ]; then
     echo "$2 is Black"
 fi
