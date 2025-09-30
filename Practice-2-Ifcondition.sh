@@ -18,7 +18,7 @@ fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-        echo -e "$R$B ERROR $N1$N - $2 failed"
+        echo -e "$R$B ERROR $N1$N - $Y $2 $N installation failed"
         exit 1
     else
         echo -e "$G$B SUCCESS $N1$N"
