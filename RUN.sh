@@ -25,7 +25,7 @@ VALIDATE() {
 }
 
 # Check if MySQL is installed
-dnf list installed mysql &>/dev/null
+dnf list installed mysql
 if [ $? -ne 0 ]; then
     echo -e "${Y}${B}Installing MySQL...${N1}${N}"
     dnf install mysql -y
