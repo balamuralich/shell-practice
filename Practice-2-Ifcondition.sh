@@ -10,19 +10,17 @@ N1="\e[0m" #No Bold
 USERID=($id -u)
 
 if [ $USERID -ne 0 ]; then
-    echo "$R $B ERROR $N1 $N - Please run from root previlege"
+    echo -e "$R $B ERROR $N1 $N - Please run from root previlege"
     exit1
-else
-    echo "$G$B SUCCESS $N1$N"
 fi
 
 VALIDATE(){
 
     if [ $USERID -ne 0 ]; then
-    echo "$R$ BERROR $N1$N - Please run from root previlege"
+    echo -e "$R$ BERROR $N1$N - Please run from root previlege"
     exit1
 else
-    echo "$G$BSUCCESS$N1$N"
+    echo -e "$G$B SUCCESS $N1$N"
 fi
 
 }
@@ -33,5 +31,5 @@ if [ $? -eq 0]; then
     dnf install mysql -y
     VALIDATE $? "MySQL"
 else
-    echo "MySQL already installed..... $Y$B SKIPPING $N1$N
+    echo -e "MySQL already installed..... $Y$B SKIPPING $N1$N
 fi
