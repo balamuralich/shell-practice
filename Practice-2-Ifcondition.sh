@@ -31,5 +31,5 @@ VALIDATE(){
     dnf install nginx -y
     VALIDATE $? "nginx"
 
-    dnf install mongodb-org -y
-    VALIDATE $? "mongodb"
+    dnf install python3 -y
+    VALIDATE $? "python3"
