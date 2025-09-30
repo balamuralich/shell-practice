@@ -10,16 +10,16 @@ N1="\e[0m" #No Bold
 USERID=($id -u)
 
 if [ $USERID -ne 0 ]; then
-    echo "$R$BERROR$N1$N - Please run from root previlege"
+    echo "$R $B ERROR $N1 $N - Please run from root previlege"
     exit1
 else
-    echo "$G$BSUCCESS$N1$N"
+    echo "$G$B SUCCESS $N1$N"
 fi
 
 VALIDATE(){
 
     if [ $USERID -ne 0 ]; then
-    echo "$R$BERROR$N1$N - Please run from root previlege"
+    echo "$R$ BERROR $N1$N - Please run from root previlege"
     exit1
 else
     echo "$G$BSUCCESS$N1$N"
