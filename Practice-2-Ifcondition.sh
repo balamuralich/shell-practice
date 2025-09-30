@@ -43,10 +43,10 @@ else
     echo -e "Nginx already installed..... $Y $B SKIPPING $N1 $N"
 fi
 
-dnf list installed mongodb
+dnf list installed mongodb-org
 
 if [ $? -ne 0 ]; then
-    dnf install mongodb -y
+    dnf install mongodb-org -y
     VALIDATE $?
 else
     echo -e "Mongodb already installed..... $Y $B SKIPPING $N1 $N"
