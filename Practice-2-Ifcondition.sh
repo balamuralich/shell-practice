@@ -33,3 +33,21 @@ if [ $? -ne 0 ]; then
 else
     echo -e "MySQL already installed..... $Y $B SKIPPING $N1 $N"
 fi
+
+dnf list installed nginx
+
+if [ $? -ne 0 ]; then
+    dnf install nginx -y
+    VALIDATE $?
+else
+    echo -e "Nginx already installed..... $Y $B SKIPPING $N1 $N"
+fi
+
+dnf list installed mongodb
+
+if [ $? -ne 0 ]; then
+    dnf install mongodb -y
+    VALIDATE $?
+else
+    echo -e "Mongodb already installed..... $Y $B SKIPPING $N1 $N"
+fi
