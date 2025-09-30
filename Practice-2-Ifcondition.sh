@@ -18,7 +18,7 @@ fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-        echo -e "$R$B ERROR $N1$N - Command failed"
+        echo -e "$R$B ERROR $N1$N - $2 failed"
         exit 1
     else
         echo -e "$G$B SUCCESS $N1$N"
@@ -29,7 +29,7 @@ dnf list installed mysql
 
 if [ $? -ne 0 ]; then
     dnf install mysql -y
-    VALIDATE $?
+    VALIDATE $? "mysql"
 else
     echo -e "MySQL already installed..... $Y $B SKIPPING $N1 $N"
 fi
@@ -38,7 +38,7 @@ dnf list installed nginx
 
 if [ $? -ne 0 ]; then
     dnf install nginx -y
-    VALIDATE $?
+    VALIDATE $? "nginx"
 else
     echo -e "Nginx already installed..... $Y $B SKIPPING $N1 $N"
 fi
@@ -47,7 +47,7 @@ dnf list installed mongodb-org
 
 if [ $? -ne 0 ]; then
     dnf install mongodb-org -y
-    VALIDATE $?
+    VALIDATE $? "mongodb"
 else
     echo -e "Mongodb already installed..... $Y $B SKIPPING $N1 $N"
 fi
