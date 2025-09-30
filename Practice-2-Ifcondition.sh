@@ -16,7 +16,7 @@ fi
 
 VALIDATE(){
 
-    if [ $USERID -ne 0 ]; then
+    if [ $1 -ne 0 ]; then
     echo -e "$R$ BERROR $N1$N - Please run from root previlege"
     exit1
 else
