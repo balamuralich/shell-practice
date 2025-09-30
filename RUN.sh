@@ -35,10 +35,10 @@ else
 fi
 
 # Check if Nginx is installed
-dnf list installed Nginx
+dnf list installed nginx
 if [ $? -ne 0 ]; then
     echo -e "${Y}${B}Installing Nginx...${N1}${N}"
-    dnf install Nginx -y
+    dnf install nginx -y
     VALIDATE $?
 else
     echo -e "Nginx already installed..... ${Y}${B}SKIPPING${N1}${N}"
