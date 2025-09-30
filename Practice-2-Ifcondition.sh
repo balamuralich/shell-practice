@@ -3,7 +3,7 @@
 R="\e[0;31m" #Red color
 G="\e[0;32m" #Green color
 Y="\e[0;33m" #Yellow color
-N="\e[0;37m" #No color
+N="\e[0m" #No color
 B="\e[1m" #Bold
 N1="\e[0m" #No Bold
 
