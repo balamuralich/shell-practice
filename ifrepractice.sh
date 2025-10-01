@@ -25,6 +25,6 @@ VALIDATE(){
             fi
 }
 
-dnf list installed mysql
+dnf list installed mysql &>>install.log
 VALIDATE $? "Mysql"
 
