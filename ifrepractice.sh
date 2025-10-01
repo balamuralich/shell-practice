@@ -1,13 +1,11 @@
 #!/bin/bash
 
-
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 B="\e[1m" #Bold
 N1="\e[22m" #No Bold
-
 
 USERID=$(id -u)
 
@@ -19,6 +17,7 @@ fi
 VALIDATE(){
             if [ $? -ne 0 ]; then
                 echo -e "$G $2 $N installing"
+                dnf install $i
             else
                 echo -e "$2 already installed hence $Y SKIPPING $N"
             fi
@@ -29,6 +28,7 @@ do
 dnf list installed $i &>>install.log
 VALIDATE $? "$i Packages"
 done
+
 # dnf list installed nginx &>>install.log
 # VALIDATE $? "Nginx Packages"
 
