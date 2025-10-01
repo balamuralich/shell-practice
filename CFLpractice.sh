@@ -16,7 +16,7 @@ fi
 
 VALIDATE(){
             if [ $1 -ne 0 ]; then
-                echo -e "$G $2 $N $3 installing"
+                echo -e "$B$G $2 $N$N1 $3 installing"
                 dnf install $i
             else
                 echo -e "$2 already installed hence $Y SKIPPING $N"
