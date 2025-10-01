@@ -26,7 +26,13 @@ VALIDATE(){
 for i in $@
 do
 dnf list installed $i &>>install.log
-VALIDATE $? "$i Packages"
+if [ $? -ne 0 ]; then
+    echo -e "$G $2 $N installing"
+    dnf install $i
+else
+    echo -e "$2 already installed hence $Y SKIPPING $N"
+fi
+# VALIDATE $? "$i Packages"
 done
 
 # dnf list installed nginx &>>install.log
