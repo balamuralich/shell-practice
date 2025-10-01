@@ -19,7 +19,7 @@ fi
 VALIDATE(){
             if [ $1 -eq 0 ]; then
                 echo -e "$2 already installed hence $Y SKIPPING $N"
-                exit 1
+                
             else
                 echo -e "$G $2 $N installed successfully"
             fi
