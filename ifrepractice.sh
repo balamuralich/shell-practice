@@ -14,12 +14,6 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
-REMOVE(){
-            if [ $1 -eq 0 ]; then
-                dnf remove $i
-            fi
-}
-
 VALIDATE(){
             if [ $1 -ne 0 ]; then
                 echo -e "$G $2 $N $3 installing"
@@ -34,7 +28,6 @@ VALIDATE(){
 for i in $@
 do
 dnf list installed $i &>>install.log
-REMOVE $? $i
 VALIDATE $? "$i" "Packages"
 done
 
