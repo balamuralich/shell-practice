@@ -16,11 +16,15 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
-dnf list installed mysql
+VALIDATE(){
+            if [ $? -eq 0 ]; then
+                echo -e "$2 packages already installed hence $Y SKIPPING $N"
+                exit 1
+            else
+                echo -e "$G $2 $N packages installed successfully"
+            fi
+}
 
-if [ $? -eq 0 ]; then
-    echo -e "Mysql packages already installed hence $Y SKIPPING $N"
-    exit 1
-else
-    echo -e "$G Mysql $N packages installed successfully"
-fi
+dnf list installed mysql
+VALIDATE $? "Mysql"
+
