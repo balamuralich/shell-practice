@@ -24,20 +24,22 @@ VALIDATE(){
             fi
 }
 
-dnf list installed mysql &>>install.log
-VALIDATE $? "Mysql Packages"
+for i in $@
+do
+dnf list installed $i &>>install.log
+VALIDATE $? "$i Packages"
+done
+# dnf list installed nginx &>>install.log
+# VALIDATE $? "Nginx Packages"
 
-dnf list installed nginx &>>install.log
-VALIDATE $? "Nginx Packages"
+# dnf list installed mongodb &>>install.log
+# VALIDATE $? "Mongodb Packages"
 
-dnf list installed mongodb &>>install.log
-VALIDATE $? "Mongodb Packages"
+# dnf install mysql -y &>>install.log
+# VALIDATE $? "Mysql"
 
-dnf install mysql -y
-VALIDATE $? "Mysql"
+# dnf install nginx -y &>>install.log
+# VALIDATE $? "Nginx"
 
-dnf install nginx -y &>>install.log
-VALIDATE $? "Nginx"
-
-dnf install mongodb -y &>>install.log
-VALIDATE $? "Mongodb"
+# dnf install mongodb -y &>>install.log
+# VALIDATE $? "Mongodb"
