@@ -17,11 +17,10 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){
-            if [ $? -eq 0 ]; then
-                echo -e "$2 already installed hence $Y SKIPPING $N"
-                
+            if [ $? -ne 0 ]; then
+                echo -e "$G $2 $N installing"
             else
-                echo -e "$G $2 $N installed successfully"
+                echo -e "$2 already installed hence $Y SKIPPING $N"
             fi
 }
 
