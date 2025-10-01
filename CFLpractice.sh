@@ -7,10 +7,10 @@ N="\e[0m"
 B="\e[1m" #Bold
 N1="\e[22m" #No Bold
 
-Logs="/var/log/shell-practice"
-mkdir -p $Logs
+CFLLogs="/var/log/shell-practice"
+mkdir -p $CFLLogs
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-Logs_file="$Logs/$SCRIPT_NAME.log"
+Logs_file="$CFLLogs/$SCRIPT_NAME.log"
 export Logs_file
 
 
