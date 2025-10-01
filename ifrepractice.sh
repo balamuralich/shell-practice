@@ -32,10 +32,10 @@ dnf list installed nginx &>>install.log
 VALIDATE $? "Nginx Packages"
 
 dnf list installed mongodb &>>install.log
-Validation $? "Mongodb Packages"
+VALIDATE $? "Mongodb Packages"
 
 dnf install mysql -y &>>install.log
-Validation $? "Mysql"
+VALIDATE $? "Mysql"
 
 dnf install nginx -y &>>install.log
-Validation $? "Nginx"
+VALIDATE $? "Nginx"
