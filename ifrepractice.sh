@@ -26,7 +26,7 @@ VALIDATE(){
 for i in $@
 do
 dnf list installed $i &>>install.log
-VALIDATE $? "$i" "Packages"
+VALIDATE $? "$i Packages"
 done
 
 # dnf list installed nginx &>>install.log
