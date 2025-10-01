@@ -15,8 +15,8 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){
-            if [ $? -ne 0 ]; then
-                echo -e "$G $2 $N installing"
+            if [ $1 -ne 0 ]; then
+                echo -e "$G $2 $N $3 installing"
                 dnf install $i
             else
                 echo -e "$2 already installed hence $Y SKIPPING $N"
@@ -26,13 +26,7 @@ VALIDATE(){
 for i in $@
 do
 dnf list installed $i &>>install.log
-if [ $? -ne 0 ]; then
-    echo -e "$G $2 $N installing"
-    dnf install $i
-else
-    echo -e "$2 already installed hence $Y SKIPPING $N"
-fi
-# VALIDATE $? "$i Packages"
+VALIDATE $? "$i" "Packages"
 done
 
 # dnf list installed nginx &>>install.log
