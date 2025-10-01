@@ -26,12 +26,18 @@ VALIDATE(){
 }
     dnf list installed mysql
     VALIDATE $? "mysql"
-    
+
     dnf install mysql
     VALIDATE $? "mysql"
 
+    dnf list installed nginx
+    VALIDATE $? "nginx"
+
     dnf install nginx -y
     VALIDATE $? "nginx"
+
+    dnf list installed mongodb
+    VALIDATE $? "mongodb"
 
     dnf install mongodb-org -y
     VALIDATE $? "mongodb"
