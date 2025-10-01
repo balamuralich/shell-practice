@@ -14,6 +14,12 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
+REMOVE(){
+            if [ $1 -eq 0 ]; then
+                dnf remove $i
+            fi
+}
+
 VALIDATE(){
             if [ $1 -ne 0 ]; then
                 echo -e "$G $2 $N $3 installing"
@@ -23,10 +29,13 @@ VALIDATE(){
             fi
 }
 
+# if we need to take i value from a list we need to create a list and re-place @ with that list name.
+
 for i in $@
 do
 dnf list installed $i &>>install.log
-VALIDATE $? "$i Packages"
+REMOVE $? $i
+VALIDATE $? "$i" "Packages"
 done
 
 # dnf list installed nginx &>>install.log
