@@ -28,15 +28,14 @@ VALIDATE(){
 dnf list installed mysql &>>install.log
 VALIDATE $? "Mysql Packages"
 
-dnf install mysql -y &>>install.log
-Validation $? "Mysql"
-
 dnf list installed nginx &>>install.log
 VALIDATE $? "Nginx Packages"
-
-dnf install nginx -y &>>install.log
-Validation $? "Nginx"
 
 dnf list installed mongodb &>>install.log
 Validation $? "Mongodb Packages"
 
+dnf install mysql -y &>>install.log
+Validation $? "Mysql"
+
+dnf install nginx -y &>>install.log
+Validation $? "Nginx"
