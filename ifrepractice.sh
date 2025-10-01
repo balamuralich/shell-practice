@@ -33,7 +33,7 @@ VALIDATE $? "Nginx Packages"
 dnf list installed mongodb &>>install.log
 VALIDATE $? "Mongodb Packages"
 
-dnf install mysql -y &>>install.log
+dnf install mysql -y
 VALIDATE $? "Mysql"
 
 dnf install nginx -y &>>install.log
