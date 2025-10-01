@@ -7,6 +7,13 @@ N="\e[0m"
 B="\e[1m" #Bold
 N1="\e[22m" #No Bold
 
+Logs="/var/log/shell-practice"
+mkdir -p $Logs
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+Logs_file="$Logs/$SCRIPT_NAME.log"
+export Logs_file
+
+
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
@@ -17,7 +24,7 @@ fi
 VALIDATE(){
             if [ $1 -ne 0 ]; then
                 echo -e "$B$G $2 $N$N1 $3 installing"
-                dnf install $i
+                dnf install $i &>>Logs_file
             else
                 echo -e "$2 already installed hence $Y SKIPPING $N"
             fi
