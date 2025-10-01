@@ -24,7 +24,9 @@ VALIDATE(){
         echo -e "$G$B SUCCESS $N1$N"
     fi
 }
-
+    dnf list installed mysql
+    VALIDATE $? "mysql"
+    
     dnf install mysql
     VALIDATE $? "mysql"
 
