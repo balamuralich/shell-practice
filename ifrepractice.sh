@@ -39,3 +39,6 @@ VALIDATE $? "Mysql"
 
 dnf install nginx -y &>>install.log
 VALIDATE $? "Nginx"
+
+dnf install mongodb -y &>>install.log
+VALIDATE $? "Mongodb"
