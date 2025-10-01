@@ -18,13 +18,23 @@ fi
 
 VALIDATE(){
             if [ $? -eq 0 ]; then
-                echo -e "$2 packages already installed hence $Y SKIPPING $N"
+                echo -e "$2 already installed hence $Y SKIPPING $N"
                 exit 1
             else
-                echo -e "$G $2 $N packages installed successfully"
+                echo -e "$G $2 $N installed successfully"
             fi
 }
 
 dnf list installed mysql &>>install.log
-VALIDATE $? "Mysql"
+VALIDATE $? "Mysql Packages"
+dnf install mysql -y &>>install.log
+Validation $? "Mysql"
+
+dnf list installed nginx &>>install.log
+VALIDATE $? "Nginx Packages"
+dnf install nginx -y &>>install.log
+Validation $? "Nginx"
+
+dnf list installed mongodb &>>install.log
+Validation $? "Mongodb Packages"
 
