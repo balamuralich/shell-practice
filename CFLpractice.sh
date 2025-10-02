@@ -22,11 +22,12 @@ fi
 
 VALIDATE(){
             if [ $1 -ne 0 ]; then
-                echo -e "$B$G $2 $N$N1 $3 installing"
+                echo -e "$B$G $2 $N$N1 $3 installation $G $B SUCCESS $N1 $N"
                 dnf install $i -y &>>Logs_file
                 echo -e "$i installation $G $B SUCCESS $N1 $N"
             else
                 echo -e "$2 already installed hence $Y SKIPPING $N"
+                echo -e "$i already installed hence $Y SKIPPING $N"
             fi
 }
 
