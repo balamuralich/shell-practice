@@ -27,7 +27,6 @@ VALIDATE(){
                 echo -e "$i installation $G $B SUCCESS $N1 $N"
             else
                 echo -e "$2 already installed hence $Y SKIPPING $N"
-                echo -e "$i already installed hence $Y SKIPPING $N"
             fi
 }
 
