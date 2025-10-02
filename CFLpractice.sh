@@ -24,7 +24,7 @@ VALIDATE(){
             if [ $1 -ne 0 ]; then
                 echo -e "$B$G $2 $N$N1 $3 installing"
                 dnf install $i -y &>>Logs_file
-                echo -e "$2 Installed $B $G SUCCESSFULLY $N $N1
+                echo -e "$i installation $G $B SUCCESS $N1 $N"
             else
                 echo -e "$2 already installed hence $Y SKIPPING $N"
             fi
