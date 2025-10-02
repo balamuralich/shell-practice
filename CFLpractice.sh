@@ -8,11 +8,10 @@ B="\e[1m" #Bold
 N1="\e[22m" #No Bold
 
 CFLLogs="/var/log/shell-practice"
-mkdir -p $CFLLogs
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 Logs_file="$CFLLogs/$SCRIPT_NAME.log"
 export Logs_file
-
+mkdir -p $CFLLogs
 
 USERID=$(id -u)
 
@@ -24,7 +23,8 @@ fi
 VALIDATE(){
             if [ $1 -ne 0 ]; then
                 echo -e "$B$G $2 $N$N1 $3 installing"
-                dnf install $i &>>Logs_file
+                dnf install $i -y &>>Logs_file
+                echo -e "$2 Installed $B $G SUCCESSFULLY $N $N1
             else
                 echo -e "$2 already installed hence $Y SKIPPING $N"
             fi

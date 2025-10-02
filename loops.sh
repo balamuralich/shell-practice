@@ -6,3 +6,4 @@ if [ $i -gt 4 ]; then
     echo $i
 fi
 done
+
